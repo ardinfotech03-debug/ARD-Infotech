@@ -1002,7 +1002,7 @@
         /* SERVICES */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px
         }
 
@@ -2755,6 +2755,14 @@
                 padding: 70px 0
             }
 
+            .hero {
+                padding-top: 90px
+            }
+
+            .hero-content {
+                min-height: calc(100vh - 90px)
+            }
+
             .hero-stats,
             .form-grid {
                 grid-template-columns: 1fr
@@ -3091,63 +3099,52 @@
                         <div class="service-tag tag-blue"><i class="fa fa-globe"></i>Web Dev</div>
                         <div class="card-icon icon-blue"><i class="fa fa-desktop"></i></div>
                         <h3>Web Development</h3>
-                        <p>From pixel-perfect landing pages to complex web applications that convert visitors into
-                            customers.</p>
+                        <p>From pixel-perfect landing pages to complex web applications that convert visitors into customers.</p>
                         <div class="service-features">
-                            <div class="service-feature"><i class="fa fa-check"></i>React, Next.js &amp;Vue.js</div>
-                            <div class="service-feature"><i class="fa fa-check"></i>Responsive &amp;accessible design
-                            </div>
+                            <div class="service-feature"><i class="fa fa-check"></i>React, Next.js &amp; Vue.js</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Responsive &amp; accessible design</div>
                             <div class="service-feature"><i class="fa fa-check"></i>SEO-optimized architecture</div>
                             <div class="service-feature"><i class="fa fa-check"></i>CMS integration</div>
                         </div>
                     </div>
                     <div class="card reveal" style="position:relative;overflow:hidden">
                         <div class="service-num">02</div>
-                        <div class="service-tag tag-purple"><i class="fa fa-mobile"></i>Mobile</div>
-                        <div class="card-icon icon-purple"><i class="fa fa-mobile-screen"></i></div>
-                        <h3>App Development</h3>
-                        <p>Native and cross-platform mobile apps that deliver seamless user experiences on iOS and
-                            Android.</p>
+                        <div class="service-tag tag-amber"><i class="fa fa-code"></i>Full-Stack</div>
+                        <div class="card-icon icon-amber"><i class="fa fa-layer-group"></i></div>
+                        <h3>Full-Stack Development</h3>
+                        <p>End-to-end development from database architecture to UI/UX — we own the entire technical stack.</p>
                         <div class="service-features">
-                            <div class="service-feature"><i class="fa fa-check"></i>Flutter &amp;React Native</div>
-                            <div class="service-feature"><i class="fa fa-check"></i>Native iOS &amp;Android</div>
-                            <div class="service-feature"><i class="fa fa-check"></i>App Store deployment</div>
-                            <div class="service-feature"><i class="fa fa-check"></i>Payment gateway integration</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Node.js, Django &amp; Spring Boot</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>MongoDB, PostgreSQL</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>AWS, GCP &amp; Azure cloud</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Microservices architecture</div>
                         </div>
                     </div>
                     <div class="card reveal" style="position:relative;overflow:hidden">
                         <div class="service-num">03</div>
-                        <div class="service-tag tag-amber"><i class="fa fa-code"></i>Full-Stack</div>
-                        <div class="card-icon icon-amber"><i class="fa fa-layer-group"></i></div>
-                        <h3>Full-Stack Development</h3>
-                        <p>End-to-end development from database architecture to UI/UX — we own the entire technical
-                            stack.</p>
-                        <div class="service-features">
-                            <div class="service-feature"><i class="fa fa-check"></i>Node.js, Django &amp;Spring Boot
-                            </div>
-                            <div class="service-feature"><i class="fa fa-check"></i>MongoDB, PostgreSQL &amp;Redis</div>
-                            <div class="service-feature"><i class="fa fa-check"></i>AWS, GCP &amp;Azure cloud</div>
-                            <div class="service-feature"><i class="fa fa-check"></i>Microservices architecture</div>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
-                    <div class="card reveal">
+                        <div class="service-tag tag-purple"><i class="fa fa-paint-brush"></i>UI/UX</div>
                         <div class="card-icon icon-green"><i class="fa fa-paint-brush"></i></div>
                         <h3>UI/UX Design</h3>
-                        <p>User research, wireframing, and polished interfaces that convert. Design systems that scale.
-                        </p>
+                        <p>User research, wireframing, and polished interfaces that convert. Design systems that scale.</p>
+                        <div class="service-features">
+                            <div class="service-feature"><i class="fa fa-check"></i>Figma &amp; Prototyping</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>User research &amp; testing</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Design systems</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Mobile-first approach</div>
+                        </div>
                     </div>
-                    <div class="card reveal">
-                        <div class="card-icon icon-blue"><i class="fa fa-cloud"></i></div>
-                        <h3>Cloud &amp;DevOps</h3>
-                        <p>Infrastructure setup, CI/CD pipelines, containerization with Docker &amp;Kubernetes.</p>
-                    </div>
-                    <div class="card reveal">
-                        <div class="card-icon icon-amber"><i class="fa fa-chart-line"></i></div>
-                        <h3>Digital Strategy</h3>
-                        <p>Technical consulting, architecture planning, and roadmap definition for long-term success.
-                        </p>
+                    <div class="card reveal" style="position:relative;overflow:hidden">
+                        <div class="service-num">04</div>
+                        <div class="service-tag tag-blue"><i class="fa fa-briefcase"></i>Portfolio</div>
+                        <div class="card-icon icon-blue"><i class="fa fa-chart-line"></i></div>
+                        <h3>Portfolio Development</h3>
+                        <p>From pixel-perfect interfaces to bulletproof backends — we build complete digital products that perform, scale, and impress.</p>
+                        <div class="service-features">
+                            <div class="service-feature"><i class="fa fa-check"></i>Personal &amp; business portfolios</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Case study showcase</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Fast &amp; SEO-ready</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Custom domain ready</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3179,7 +3176,7 @@
                     </div>
                     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
                         <div class="card" style="text-align:center">
-                            <div id="about-project-count" style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--accent)">50+
+                            <div id="about-project-count" style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--accent)">0+
                             </div>
                             <div style="color:var(--muted);font-size:.88rem">Projects Delivered</div>
                         </div>
@@ -3280,7 +3277,7 @@
                         <div class="tl-dot"></div>
                         <div class="tl-body">
                             <div class="tl-year">2025 — Present</div>
-                            <h4>State Expansion</h4>
+                            <h4>District Expansion</h4>
                             <p>Now serving clients across 2 districts with 3 engineers and designers.</p>
                         </div>
                     </div>
@@ -3340,7 +3337,6 @@
                             <div class="pf-item"><i class="fa fa-check"></i> Responsive design</div>
                             <div class="pf-item"><i class="fa fa-check"></i> Contact form</div>
                             <div class="pf-item"><i class="fa fa-check"></i> SEO optimization</div>
-                            <div class="pf-item"><i class="fa fa-check"></i> 30-day support</div>
                             <div class="pf-item no"><i class="fa fa-times"></i> CMS integration</div>
                         </div>
                         <button class="btn-full btn-outline-full pricing-get-started"
@@ -3357,7 +3353,6 @@
                             <div class="pf-item"><i class="fa fa-check"></i> CMS integration</div>
                             <div class="pf-item"><i class="fa fa-check"></i> Blog & news section</div>
                             <div class="pf-item"><i class="fa fa-check"></i> Advanced animations</div>
-                            <div class="pf-item"><i class="fa fa-check"></i> 60-day support</div>
                             <div class="pf-item"><i class="fa fa-check"></i> API integrations</div>
                         </div>
                         <button class="btn-full btn-accent pricing-get-started"
@@ -3375,7 +3370,6 @@
                             <div class="pf-item"><i class="fa fa-check"></i> Mobile app (iOS & Android)</div>
                             <div class="pf-item"><i class="fa fa-check"></i> Database architecture</div>
                             <div class="pf-item"><i class="fa fa-check"></i> Cloud infrastructure</div>
-                            <div class="pf-item"><i class="fa fa-check"></i> 90-day support</div>
                             <div class="pf-item"><i class="fa fa-check"></i> Source code ownership</div>
                         </div>
                         <button class="btn-full btn-outline-full pricing-get-started"
@@ -3477,7 +3471,7 @@
                                 <div class="ci-icon"><i class="fa fa-envelope"></i></div>
                                 <div>
                                     <div class="ci-label">Email Address</div>
-                                    <div class="ci-val"><a href="/cdn-cgi/l/email-protection#056477616c6b636a7160666d3536456268646c692b666a68"><span class="__cf_email__" data-cfemail="c0a1b2a4a9aea6afb4a5a3a8f0f380a7ada1a9aceea3afad">[email&#160;protected]</span></a></div>
+                                    <div class="ci-val"><a href="mailto:ardinfotech03@gmail.com">ardinfotech03@gmail.com</a></div>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -3841,12 +3835,10 @@
                         src="https://res.cloudinary.com/dilsx2np3/image/upload/v1775214897/ard_importants_pmohsr.png"
                         alt="ARD Infotech" />
                     <p class="footer-desc">Building world-class digital products for startups and enterprises since
-                        2025. Coimbatore, India.</p>
+                        2025. Namakkal, India.</p>
                     <div class="footer-socials">
-                        <a class="footer-soc" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="footer-soc" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="footer-soc" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="footer-soc" href="#"><i class="fab fa-github"></i></a>
+                        <a class="footer-soc" href="https://www.instagram.com/ard_infotech_03?igsh=bm1jYTBhaGxyMmVx"><i class="fab fa-instagram"></i></a>
+                        <a class="footer-soc" href="https://github.com/ardinfotech03-debug"><i class="fab fa-github"></i></a>
                         <a class="footer-soc" id="emailConfigBtn" title="Email Management (Admin Only)"><i
                                 class="fa fa-envelope"></i></a>
                     </div>
@@ -3870,7 +3862,7 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="/cdn-cgi/l/email-protection#f59487919c9b939a8190969dc5c6b59298949c99db969a98"><span class="__cf_email__" data-cfemail="b3d2c1d7daddd5dcc7d6d0db8380f3d4ded2dadf9dd0dcde">[email&#160;protected]</span></a></li>
+                        <li><a href="mailto:ardinfotech03@gmail.com">ardinfotech03@gmail.com</a></li>
                         <li><a href="tel:+919600588274">+91 96005 88274</a></li>
                         <li><a href="#">Namakkal, TN</a></li>
                     </ul>
@@ -3945,41 +3937,38 @@
 
             var pressTimer = null;
             var longPressThreshold = 5000; // 5 Seconds
-            var longPressFired = false;
+            var longPressTriggered = false;
 
-            // MOUSE (desktop)
-            waBtn.addEventListener('mousedown', function (e) {
-                longPressFired = false;
+            function startPress(e) {
+                if (e.type === 'touchstart') e.preventDefault();
+                longPressTriggered = false;
+                clearTimeout(pressTimer);
                 pressTimer = setTimeout(function () {
-                    longPressFired = true;
-                    openAdmin();
-                    showToast('Admin Mode Unlocked 🔓');
-                }, longPressThreshold);
-            });
-            ['mouseup', 'mouseleave'].forEach(function (evt) {
-                waBtn.addEventListener(evt, function () { clearTimeout(pressTimer); });
-            });
-
-            // TOUCH (mobile) — do NOT preventDefault so the link works normally on tap
-            waBtn.addEventListener('touchstart', function (e) {
-                longPressFired = false;
-                pressTimer = setTimeout(function () {
-                    longPressFired = true;
+                    longPressTriggered = true;
                     openAdmin();
                     showToast('Admin Mode Unlocked 🔓');
                     if ("vibrate" in navigator) navigator.vibrate(200);
                 }, longPressThreshold);
-            }, { passive: true });
+            }
 
-            ['touchend', 'touchcancel'].forEach(function (evt) {
-                waBtn.addEventListener(evt, function (e) {
-                    clearTimeout(pressTimer);
-                    // If long press fired, block the link navigation
-                    if (longPressFired) {
-                        e.preventDefault();
-                        longPressFired = false;
-                    }
-                });
+            function cancelPress() {
+                clearTimeout(pressTimer);
+                pressTimer = null;
+            }
+
+            waBtn.addEventListener('mousedown', startPress);
+            waBtn.addEventListener('touchstart', startPress, { passive: false });
+
+            ['mouseup', 'mouseleave', 'touchend', 'touchcancel'].forEach(function (evt) {
+                waBtn.addEventListener(evt, cancelPress);
+            });
+
+            waBtn.addEventListener('click', function (e) {
+                // Block WhatsApp link open if long press triggered
+                if (longPressTriggered) {
+                    e.preventDefault();
+                    longPressTriggered = false;
+                }
             });
         }
 
@@ -3990,31 +3979,44 @@
             var emailBtn = document.getElementById('emailConfigBtn');
             if (!emailBtn) return;
 
-            var pressTimer;
+            var pressTimer = null;
             var longPressThreshold = 4000; // 4 Seconds
+            var longPressTriggered = false;
 
-            ['mousedown', 'touchstart'].forEach(function (evt) {
-                emailBtn.addEventListener(evt, function (e) {
-                    if (evt === 'touchstart') e.preventDefault();
-                    pressTimer = setTimeout(function () {
-                        if (appState.isAdminLoggedIn) {
-                            openModal('email-config');
-                        } else {
-                            openAdmin(); // Open login if not logged in
-                            showToast('Please Login first to manage keys', 'error');
-                        }
-                        if ("vibrate" in navigator) navigator.vibrate(200);
-                    }, longPressThreshold);
-                });
-            });
+            function startPress(e) {
+                if (e.type === 'touchstart') e.preventDefault();
+                longPressTriggered = false;
+                clearTimeout(pressTimer);
+                pressTimer = setTimeout(function () {
+                    longPressTriggered = true;
+                    if (appState.isAdminLoggedIn) {
+                        openModal('email-config');
+                    } else {
+                        openAdmin();
+                        showToast('Please Login first to manage keys', 'error');
+                    }
+                    if ("vibrate" in navigator) navigator.vibrate(200);
+                }, longPressThreshold);
+            }
+
+            function cancelPress() {
+                clearTimeout(pressTimer);
+                pressTimer = null;
+            }
+
+            emailBtn.addEventListener('mousedown', startPress);
+            emailBtn.addEventListener('touchstart', startPress, { passive: false });
 
             ['mouseup', 'mouseleave', 'touchend', 'touchcancel'].forEach(function (evt) {
-                emailBtn.addEventListener(evt, function () { clearTimeout(pressTimer); });
+                emailBtn.addEventListener(evt, cancelPress);
             });
 
             emailBtn.addEventListener('click', function (e) {
-                // If the long-press triggered, pressTimer will be clear/null or we can check state
-                // But for simplicity, we just allow the mailto to work if they didn't hold
+                if (longPressTriggered) {
+                    e.preventDefault();
+                    longPressTriggered = false;
+                    return;
+                }
                 window.location.href = "mailto:ardinfotech03@gmail.com";
             });
         }
@@ -4067,23 +4069,14 @@
         }
 
         // ============================================
-        // CURSOR (desktop only — hide on touch devices)
+        // CURSOR
         // ============================================
-        (function() {
-            var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+        document.addEventListener('mousemove', function (e) {
             var c = document.getElementById('cursor');
             var r = document.getElementById('cursorRing');
-            if (isTouchDevice) {
-                // Hide cursor elements on mobile/touch
-                if (c) c.style.display = 'none';
-                if (r) r.style.display = 'none';
-                return;
-            }
-            document.addEventListener('mousemove', function (e) {
-                if (c) { c.style.left = (e.clientX - 5) + 'px'; c.style.top = (e.clientY - 5) + 'px'; }
-                if (r) { r.style.left = (e.clientX - 18) + 'px'; r.style.top = (e.clientY - 18) + 'px'; }
-            });
-        })();
+            if (c) { c.style.left = (e.clientX - 5) + 'px'; c.style.top = (e.clientY - 5) + 'px'; }
+            if (r) { r.style.left = (e.clientX - 18) + 'px'; r.style.top = (e.clientY - 18) + 'px'; }
+        });
 
         window.addEventListener('scroll', function () {
             var nav = document.getElementById('mainNav');
@@ -4219,27 +4212,16 @@
         }
 
         // Load added projects from Google Sheets (live projects)
-        function getDeletedProjectIds() {
-            try { return JSON.parse(localStorage.getItem('ard_deleted_ids') || '[]'); } catch(e) { return []; }
-        }
-        function saveDeletedProjectId(id) {
-            try {
-                var ids = getDeletedProjectIds();
-                if (ids.indexOf(String(id)) === -1) ids.push(String(id));
-                localStorage.setItem('ard_deleted_ids', JSON.stringify(ids));
-            } catch(e) {}
-        }
         function loadProjectsFromSheet() {
             if (typeof SHEET_URL === 'undefined') return;
             fetch(SHEET_URL + '?action=projects')
                 .then(function (response) { return response.json(); })
                 .then(function (data) {
                     if (data && Array.isArray(data) && data.length > 0) {
-                        var deletedIds = getDeletedProjectIds();
+                        // Clear existing user projects to avoid duplicates
                         appState.userProjects = [];
                         data.forEach(function (p) {
-                            // Skip projects that were locally deleted
-                            if (p.id && deletedIds.indexOf(String(p.id)) !== -1) return;
+                            // Add to state
                             appState.userProjects.push(p);
                         });
                         renderProjects(); updateProjectCount();
@@ -4388,10 +4370,7 @@
             list.innerHTML = html;
         }
         function deleteProject(idx) {
-            var proj = appState.userProjects[idx];
-            var name = proj.name;
-            // Save id to deleted list so it stays gone after reload
-            if (proj.id) saveDeletedProjectId(proj.id);
+            var name = appState.userProjects[idx].name;
             appState.userProjects.splice(idx, 1);
             renderAdminList(); renderProjects(); updateProjectCount();
             showToast('Project "' + name + '" deleted.', 'error');
