@@ -4,13 +4,51 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARD Infotech — Web, App &amp;Full-Stack Development</title>
+    <title>ARD Infotech — Web, App &amp; Full-Stack Development</title>
+    <meta name="description"
+        content="ARD Infotech - Professional web development, UI/UX design, and portfolio solutions in Namakkal, Tamil Nadu. We build scalable, fast, and beautiful web applications for startups and enterprises. Expert developers specializing in React, Node.js, and modern web technologies." />
+    <link rel="icon" type="image/jpeg"
+        href="https://res.cloudinary.com/dilsx2np3/image/upload/w_32,h_32,c_fit,f_auto,q_auto/v1777214045/ARD_ntgdsl.jpg" />
+
+    <!-- Preconnect to origins used above-the-fold -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <!-- Load fonts asynchronously to prevent render-blocking -->
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-     <link rel="icon" type="jpg" href="https://res.cloudinary.com/dilsx2np3/image/upload/v1777214045/ARD_ntgdsl.jpg"/>
+        rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+            rel="stylesheet" />
+    </noscript>
+
+    <!-- Preload critical FontAwesome webfont -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin />
+    <!-- Load FontAwesome CSS asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    </noscript>
+    <!-- Override FontAwesome brands font-display to swap (fixes audit) -->
+    <style>
+        @font-face {
+            font-family: 'Font Awesome 6 Brands';
+            font-display: swap;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-brands-400.woff2') format('woff2')
+        }
+
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-regular-400.woff2') format('woff2')
+        }
+    </style>
     <style>
         :root {
             --bg: #080a0f;
@@ -46,7 +84,7 @@
 
         body.light-mode nav.scrolled {
             background: rgba(240, 244, 248, 0.95);
-            box-shadow: 0 1px 0 rgba(0,0,0,0.10);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.10);
         }
 
         body.light-mode .mobile-menu {
@@ -59,42 +97,106 @@
 
         /* ---- Light mode: fix hardcoded dark backgrounds & text ---- */
         body.light-mode .stat-card {
-            background: rgba(255,255,255,0.85);
-            border-color: rgba(0,0,0,0.10);
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(0, 0, 0, 0.10);
         }
+
         body.light-mode .floating-card {
-            background: rgba(255,255,255,0.95);
-            border-color: rgba(0,0,0,0.12);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 0, 0, 0.12);
             color: #1a202c;
         }
+
         body.light-mode .hero-logo-box {
-            background: linear-gradient(135deg,rgba(0,153,204,.07),rgba(109,40,217,.07));
-            border-color: rgba(0,153,204,.2);
+            background: linear-gradient(135deg, rgba(0, 153, 204, .07), rgba(109, 40, 217, .07));
+            border-color: rgba(0, 153, 204, .2);
         }
-        body.light-mode .hero-logo-ring { border-color: rgba(0,153,204,.15); }
-        body.light-mode .hero-logo-ring2 { border-color: rgba(109,40,217,.12); }
-        body.light-mode .project-thumb-img { background: #e2e8f0; }
-        body.light-mode .visit-btn { background: rgba(0,0,0,0.04); color: var(--accent); }
-        body.light-mode .tag-purple { color: #6d28d9; }
-        body.light-mode .modal-overlay { background: rgba(0,0,0,0.45); }
-        body.light-mode .admin-overlay { background: rgba(0,0,0,0.5); }
-        body.light-mode .admin-panel { background: var(--bg2); border-color: rgba(0,153,204,0.25); }
-        body.light-mode select.form-input option { background: #ffffff; color: #1a202c; }
+
+        body.light-mode .hero-logo-ring {
+            border-color: rgba(0, 153, 204, .15);
+        }
+
+        body.light-mode .hero-logo-ring2 {
+            border-color: rgba(109, 40, 217, .12);
+        }
+
+        body.light-mode .project-thumb-img {
+            background: #e2e8f0;
+        }
+
+        body.light-mode .visit-btn {
+            background: rgba(0, 0, 0, 0.04);
+            color: var(--accent);
+        }
+
+        body.light-mode .tag-purple {
+            color: #6d28d9;
+        }
+
+        body.light-mode .modal-overlay {
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        body.light-mode .admin-overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode .admin-panel {
+            background: var(--bg2);
+            border-color: rgba(0, 153, 204, 0.25);
+        }
+
+        body.light-mode select.form-input option {
+            background: #ffffff;
+            color: #1a202c;
+        }
+
         body.light-mode .form-submit:hover,
-        body.light-mode .btn-primary:hover { background: #1a202c; color: #ffffff; }
-        body.light-mode .nav-cta:hover { background: #1a202c; color: #ffffff; }
-        body.light-mode ::-webkit-scrollbar-track { background: #e4eaf2; }
-        body.light-mode .pricing-card { border-color: rgba(0,0,0,0.10); }
-        body.light-mode .card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+        body.light-mode .btn-primary:hover {
+            background: #1a202c;
+            color: #ffffff;
+        }
+
+        body.light-mode .nav-cta:hover {
+            background: #1a202c;
+            color: #ffffff;
+        }
+
+        body.light-mode ::-webkit-scrollbar-track {
+            background: #e4eaf2;
+        }
+
+        body.light-mode .pricing-card {
+            border-color: rgba(0, 0, 0, 0.10);
+        }
+
+        body.light-mode .card:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
         body.light-mode .hero-title,
         body.light-mode .section-title,
         body.light-mode .modal-title,
         body.light-mode .card h3,
-        body.light-mode .footer-col h4 { color: #1a202c; }
-        body.light-mode .loader-bar { background: rgba(0,0,0,0.1); }
-        body.light-mode .footer-soc:hover { background: rgba(0,153,204,0.08); }
-        body.light-mode .star-btn { color: rgba(0,0,0,0.18); }
-        body.light-mode .timeline::before { background: rgba(0,0,0,0.12); }
+        body.light-mode .footer-col h4 {
+            color: #1a202c;
+        }
+
+        body.light-mode .loader-bar {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .footer-soc:hover {
+            background: rgba(0, 153, 204, 0.08);
+        }
+
+        body.light-mode .star-btn {
+            color: rgba(0, 0, 0, 0.18);
+        }
+
+        body.light-mode .timeline::before {
+            background: rgba(0, 0, 0, 0.12);
+        }
 
         /* THEME TOGGLE BUTTON */
         .theme-toggle {
@@ -302,10 +404,12 @@
                 transform: scale(1);
                 filter: brightness(1);
             }
+
             45% {
                 transform: scale(0.96);
                 filter: brightness(1.2);
             }
+
             100% {
                 transform: scale(1);
                 filter: brightness(1);
@@ -336,16 +440,21 @@
             width: 200%;
             height: 3px;
             background: repeating-linear-gradient(90deg,
-                gold 0%, gold 33.33%,
-                aqua 33.33%, aqua 66.66%,
-                #fff 66.66%, #fff 100%);
+                    gold 0%, gold 33.33%,
+                    aqua 33.33%, aqua 66.66%,
+                    #fff 66.66%, #fff 100%);
             background-size: 50% 100%;
             animation: navMarquee 3s linear infinite
         }
 
         @keyframes navMarquee {
-            from { transform: translateX(0) }
-            to   { transform: translateX(-50%) }
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
         }
 
         nav.scrolled {
@@ -504,15 +613,45 @@
         }
 
         /* Staggered animation */
-        .mobile-menu.open .nav-link:nth-child(1) { transition-delay: .1s }
-        .mobile-menu.open .nav-link:nth-child(2) { transition-delay: .15s }
-        .mobile-menu.open .nav-link:nth-child(3) { transition-delay: .2s }
-        .mobile-menu.open .nav-link:nth-child(4) { transition-delay: .25s }
-        .mobile-menu.open .nav-link:nth-child(5) { transition-delay: .3s }
-        .mobile-menu.open .nav-link:nth-child(6) { transition-delay: .35s }
-        .mobile-menu.open .nav-link:nth-child(7) { transition-delay: .4s }
-        .mobile-menu.open .btn-primary { transition-delay: .45s; opacity: 0; transform: translateY(20px); transition: all .4s ease }
-        .mobile-menu.open .btn-primary { opacity: 1; transform: translateY(0) }
+        .mobile-menu.open .nav-link:nth-child(1) {
+            transition-delay: .1s
+        }
+
+        .mobile-menu.open .nav-link:nth-child(2) {
+            transition-delay: .15s
+        }
+
+        .mobile-menu.open .nav-link:nth-child(3) {
+            transition-delay: .2s
+        }
+
+        .mobile-menu.open .nav-link:nth-child(4) {
+            transition-delay: .25s
+        }
+
+        .mobile-menu.open .nav-link:nth-child(5) {
+            transition-delay: .3s
+        }
+
+        .mobile-menu.open .nav-link:nth-child(6) {
+            transition-delay: .35s
+        }
+
+        .mobile-menu.open .nav-link:nth-child(7) {
+            transition-delay: .4s
+        }
+
+        .mobile-menu.open .btn-primary {
+            transition-delay: .45s;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all .4s ease
+        }
+
+        .mobile-menu.open .btn-primary {
+            opacity: 1;
+            transform: translateY(0)
+        }
 
         /* Better touch behavior for long-press actions */
         .whatsapp-btn,
@@ -930,7 +1069,7 @@
             font-size: .8rem;
             text-transform: uppercase;
             letter-spacing: .15em;
-            color: var(--muted);
+            color: rgba(255, 255, 255, 0.75);
             white-space: nowrap;
             display: flex;
             align-items: center;
@@ -1282,6 +1421,7 @@
             border: 2px solid var(--border);
             overflow: hidden
         }
+
         .team-avatar img {
             width: 100%;
             height: 100%;
@@ -1328,6 +1468,7 @@
             z-index: 2;
             margin-top: 12px
         }
+
         .team-card {
             text-align: center;
             padding: 0;
@@ -1352,7 +1493,7 @@
             will-change: transform
         }
 
-        .team-card:hover .team-card-inner {
+        .team-card-inner.flipped {
             transform: rotateY(180deg) translateY(-8px)
         }
 
@@ -1546,18 +1687,21 @@
             border-color: #6b7280;
             color: #9ca3af
         }
+
         .pricing-card.un-primum .pricing-get-started:hover {
-            background: rgba(107,114,128,0.15);
+            background: rgba(107, 114, 128, 0.15);
             border-color: #9ca3af;
             color: #fff
         }
+
         .pricing-card.ultra-primum .pricing-get-started {
             background: transparent;
             border-color: #f59e0b;
             color: #f59e0b
         }
+
         .pricing-card.ultra-primum .pricing-get-started:hover {
-            background: rgba(245,158,11,0.15);
+            background: rgba(245, 158, 11, 0.15);
             border-color: #fbbf24;
             color: #fff
         }
@@ -2349,7 +2493,11 @@
             opacity: 1;
             transform: none
         }
-        #page-about .reveal { opacity:1 !important; transform:none !important }
+
+        #page-about .reveal {
+            opacity: 1 !important;
+            transform: none !important
+        }
 
         /* TOAST */
         .toast {
@@ -2809,7 +2957,7 @@
         }
 
         .footer-desc {
-            color: var(--muted);
+            color: rgba(255, 255, 255, 0.8);
             font-size: .88rem;
             line-height: 1.7;
             max-width: 260px;
@@ -2854,7 +3002,7 @@
         }
 
         .footer-col ul li a {
-            color: var(--muted);
+            color: rgba(255, 255, 255, 0.85);
             font-size: .88rem;
             transition: color .25s
         }
@@ -2876,7 +3024,7 @@
         .footer-copy {
             font-family: 'DM Mono', monospace;
             font-size: .72rem;
-            color: var(--muted)
+            color: rgba(255, 255, 255, 0.8)
         }
 
         /* RESPONSIVE */
@@ -2902,11 +3050,17 @@
             }
 
             .values-grid {
-                grid-template-columns: 1fr 1fr
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .values-grid .card {
+                padding: 15px 10px;
             }
         }
 
         @media (hover: none) and (pointer: coarse) {
+
             .cursor,
             .cursor-ring {
                 display: none !important;
@@ -3058,8 +3212,8 @@
     <!-- LOADER -->
     <div id="loader">
         <div class="loader-logo">
-            <img src="https://res.cloudinary.com/dilsx2np3/image/upload/v1777214045/ARD_ntgdsl.jpg"
-                alt="ARD Infotech" />
+            <img src="https://res.cloudinary.com/dilsx2np3/image/upload/w_180,h_180,c_fill,f_auto,q_auto/v1777214045/ARD_ntgdsl.jpg"
+                alt="ARD Infotech" width="180" height="180" />
         </div>
         <p class="loader-sub">Building Digital Excellence Since 2025</p>
         <div class="loader-bar">
@@ -3075,8 +3229,8 @@
     <!-- WHATSAPP FLOATING BUTTON (bottom-left, above admin badge) -->
     <div class="whatsapp-float">
         <a class="whatsapp-btn" href="https://wa.me/918610852614" target="_blank" rel="noopener"
-            title="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
+            title="Chat on WhatsApp" aria-label="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
         </a>
         <span class="whatsapp-label">+91 86108 52614</span>
     </div>
@@ -3087,8 +3241,8 @@
     <!-- NAV -->
     <nav id="mainNav">
         <a class="nav-brand" href="#" onclick="showPage('home');return false;">
-            <img src="https://res.cloudinary.com/dilsx2np3/image/upload/v1777214045/ARD_ntgdsl.jpg"
-                alt="ARD Infotech Logo" />
+            <img src="https://res.cloudinary.com/dilsx2np3/image/upload/w_80,h_80,c_fill,f_auto,q_auto/v1777214045/ARD_ntgdsl.jpg"
+                alt="ARD Infotech Logo" width="40" height="40" fetchpriority="high" />
         </a>
         <div class="nav-links">
             <a class="nav-link active" href="#" onclick="showPage('home');return false;">Home</a>
@@ -3099,9 +3253,11 @@
             <a class="nav-link" href="#" onclick="showPage('feedback');return false;">Feedback</a>
             <a class="nav-link" href="#" onclick="showPage('contact');return false;">Contact</a>
             <button class="nav-cta" onclick="openModal('book')">Book a Call</button>
-            <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle dark/light mode">🌙</button>
+            <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()"
+                title="Toggle dark/light mode">🌙</button>
         </div>
-        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Open navigation menu"
+            aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -3117,7 +3273,8 @@
         <a class="nav-link" href="#" onclick="mobileNavigate('feedback');return false;">Feedback</a>
         <a class="nav-link" href="#" onclick="mobileNavigate('contact');return false;">Contact</a>
         <button class="btn-primary" onclick="openModal('book')">Book a Call</button>
-        <button class="theme-toggle" onclick="toggleTheme()" style="margin-top:8px;" title="Toggle dark/light mode" id="mobileThemeBtn">🌙</button>
+        <button class="theme-toggle" onclick="toggleTheme()" style="margin-top:8px;" title="Toggle dark/light mode"
+            id="mobileThemeBtn">🌙</button>
     </div>
     <!-- HOME PAGE -->
     <div class="page active" id="page-home">
@@ -3167,8 +3324,9 @@
                             <div class="hero-logo-ring"></div>
                             <div class="hero-logo-ring2"></div>
                             <div class="hero-logo-box">
-                                <img src="https://res.cloudinary.com/dilsx2np3/image/upload/v1777214045/ARD_ntgdsl.jpg"
-                                    alt="ARD Infotech" />
+                                <img src="https://res.cloudinary.com/dilsx2np3/image/upload/w_400,h_400,c_fill,f_auto,q_auto/v1777214045/ARD_ntgdsl.jpg"
+                                    alt="ARD Infotech" width="200" height="200" style="max-width:100%;height:auto"
+                                    fetchpriority="high" />
                             </div>
                             <div class="floating-card fc-1">
                                 <span class="fc-dot dot-green"></span>
@@ -3313,7 +3471,8 @@
                             customers.</p>
                         <div class="service-features">
                             <div class="service-feature"><i class="fa fa-check"></i>React, Next.js &amp; Vue.js</div>
-                            <div class="service-feature"><i class="fa fa-check"></i>Responsive &amp; accessible design</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Responsive &amp; accessible design
+                            </div>
                             <div class="service-feature"><i class="fa fa-check"></i>SEO-optimized architecture</div>
                             <div class="service-feature"><i class="fa fa-check"></i>CMS integration</div>
                         </div>
@@ -3323,9 +3482,11 @@
                         <div class="service-tag tag-purple"><i class="fa fa-paint-brush"></i>UI/UX</div>
                         <div class="card-icon icon-green"><i class="fa fa-paint-brush"></i></div>
                         <h3>UI/UX Design</h3>
-                        <p>User research, wireframing, and polished interfaces that convert. Design systems that scale.</p>
+                        <p>User research, wireframing, and polished interfaces that convert. Design systems that scale.
+                        </p>
                         <div class="service-features">
-                            <div class="service-feature"><i class="fa fa-check"></i>User research &amp; wireframing</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>User research &amp; wireframing
+                            </div>
                             <div class="service-feature"><i class="fa fa-check"></i>Figma &amp; Adobe XD</div>
                             <div class="service-feature"><i class="fa fa-check"></i>Design systems</div>
                             <div class="service-feature"><i class="fa fa-check"></i>Prototyping &amp; testing</div>
@@ -3336,9 +3497,11 @@
                         <div class="service-tag tag-amber"><i class="fa fa-chart-line"></i>Portfolio</div>
                         <div class="card-icon icon-amber"><i class="fa fa-chart-line"></i></div>
                         <h3>Portfolio</h3>
-                        <p>We create and deliver professional portfolios tailored to your needs — modern, responsive, and ready to showcase your skills.</p>
+                        <p>We create and deliver professional portfolios tailored to your needs — modern, responsive,
+                            and ready to showcase your skills.</p>
                         <div class="service-features">
-                            <div class="service-feature"><i class="fa fa-check"></i>Custom design &amp; development</div>
+                            <div class="service-feature"><i class="fa fa-check"></i>Custom design &amp; development
+                            </div>
                             <div class="service-feature"><i class="fa fa-check"></i>Mobile responsive</div>
                             <div class="service-feature"><i class="fa fa-check"></i>Fast &amp; SEO friendly</div>
                             <div class="service-feature"><i class="fa fa-check"></i>Easy to update</div>
@@ -3372,26 +3535,34 @@
                         <p style="color:var(--muted);line-height:1.8">Founded in 2025, we've already delivered 0+
                             projects across 2 districts, maintaining a 98% client satisfaction rate.</p>
                     </div>
-                    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                    <div class="reveal values-grid">
                         <div class="card" style="text-align:center">
-                            <div id="about-project-count" style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--accent)">50+
-                            </div>
-                            <div style="color:var(--muted);font-size:.88rem">Projects Delivered</div>
+                            <div id="about-project-count"
+                                style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--accent)">50+</div>
+                            <div style="color:var(--muted);font-size:.82rem">Projects Delivered</div>
                         </div>
                         <div class="card" style="text-align:center">
-                            <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--accent2)">2
-                            </div>
-                            <div style="color:var(--muted);font-size:.88rem">District Served</div>
+                            <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--accent2)">2</div>
+                            <div style="color:var(--muted);font-size:.82rem">Districts Served</div>
                         </div>
                         <div class="card" style="text-align:center">
                             <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--accent3)">98%
                             </div>
-                            <div style="color:var(--muted);font-size:.88rem">Satisfaction Rate</div>
+                            <div style="color:var(--muted);font-size:.82rem">Satisfaction Rate</div>
                         </div>
                         <div class="card" style="text-align:center">
                             <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--success)">24/7
                             </div>
-                            <div style="color:var(--muted);font-size:.88rem">Support Available</div>
+                            <div style="color:var(--muted);font-size:.82rem">Support Available</div>
+                        </div>
+                        <div class="card" style="text-align:center">
+                            <div id="happy-clients-count"
+                                style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--blue)">150+</div>
+                            <div style="color:var(--muted);font-size:.82rem">Happy Clients/Visitors</div>
+                        </div>
+                        <div class="card" style="text-align:center">
+                            <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--purple)">5+</div>
+                            <div style="color:var(--muted);font-size:.82rem">Cities Reached</div>
                         </div>
                     </div>
                 </div>
@@ -3404,58 +3575,88 @@
                     <h2 class="section-title">Meet the <span>Minds</span> Behind ARD</h2>
                 </div>
                 <div class="team-grid">
-                   
-                    <div class="card team-card reveal">
+
+                    <div class="card team-card reveal" onclick="toggleFlip(this.querySelector('.team-card-inner'))">
                         <div class="team-card-inner">
                             <div class="team-card-face team-card-front">
-                                <div class="team-avatar av-2"><img src="https://res.cloudinary.com/dilsx2np3/image/upload/v1777217999/alagu2_asylce.jpg" alt="alagu.jpg"></div>
+                                <div class="team-avatar av-2"><img
+                                        src="https://res.cloudinary.com/dilsx2np3/image/upload/v1777217999/alagu2_asylce.jpg"
+                                        alt="Alagarasan D" width="80" height="80" /></div>
                                 <div class="team-name">Alagarasan D</div>
                                 <div class="team-role">Frontend Developer</div>
-                                <p style="color:var(--muted);font-size:.82rem;margin-top:10px;line-height:1.6">Creative frontend developer crafting beautiful and responsive user interfaces.</p>
+                                <p style="color:var(--muted);font-size:.82rem;margin-top:10px;line-height:1.6">Creative
+                                    frontend developer crafting beautiful and responsive user interfaces.</p>
                                 <div class="team-social">
-                                    <a class="team-soc" href="https://www.linkedin.com/in/alagarasan-d-312021291/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="team-soc" href="https://github.com/Alagarasan-D" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i class="fab fa-github"></i></a>
-                                    <a class="team-soc" href="https://alagarasan-d.github.io/Portfolio./" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i class="fa fa-globe"></i></a>
+                                    <a class="team-soc" href="https://www.linkedin.com/in/alagarasan-d-312021291/"
+                                        target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                    <a class="team-soc" href="https://github.com/Alagarasan-D" target="_blank"
+                                        rel="noopener noreferrer" onclick="event.stopPropagation();"><i
+                                            class="fab fa-github"></i></a>
+                                    <a class="team-soc" href="https://alagarasan-d.github.io/Portfolio./"
+                                        target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i
+                                            class="fa fa-globe"></i></a>
                                 </div>
                             </div>
                             <div class="team-card-face team-card-back">
-                                <img src="https://res.cloudinary.com/dilsx2np3/image/upload/v1777217999/alagu2_asylce.jpg" alt="Alagarasan D">
+                                <img src="https://res.cloudinary.com/dilsx2np3/image/upload/v1777217999/alagu2_asylce.jpg"
+                                    alt="Alagarasan D" width="360" height="360" style="max-width:100%;height:100%" />
                             </div>
                         </div>
                     </div>
-                    <div class="card team-card reveal">
+                    <div class="card team-card reveal" onclick="toggleFlip(this.querySelector('.team-card-inner'))">
                         <div class="team-card-inner">
                             <div class="team-card-face team-card-front">
-                                <div class="team-avatar av-3"><img src="https://res.cloudinary.com/dilsx2np3/image/upload/ar_1:1,c_auto/king_iwxaei.jpg" alt="Raja S"></div>
+                                <div class="team-avatar av-3"><img
+                                        src="https://res.cloudinary.com/dilsx2np3/image/upload/ar_1:1,c_auto/king_iwxaei.jpg"
+                                        alt="Raja S" width="80" height="80" /></div>
                                 <div class="team-name">Raja S</div>
                                 <div class="team-role">Backend Developer</div>
-                                <p style="color:var(--muted);font-size:.82rem;margin-top:10px;line-height:1.6">Backend specialist designing robust APIs and efficient server-side architectures.</p>
+                                <p style="color:var(--muted);font-size:.82rem;margin-top:10px;line-height:1.6">Backend
+                                    specialist designing robust APIs and efficient server-side architectures.</p>
                                 <div class="team-social">
-                                    <a class="team-soc" href="https://www.linkedin.com/in/raja-s-401075331/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="team-soc" href="https://github.com/s-rajaa" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i class="fab fa-github"></i></a>
-                                    <a class="team-soc" href="https://s-rajaa.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i class="fa fa-globe"></i></a>
+                                    <a class="team-soc" href="https://www.linkedin.com/in/raja-s-401075331/"
+                                        target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                    <a class="team-soc" href="https://github.com/s-rajaa" target="_blank"
+                                        rel="noopener noreferrer" onclick="event.stopPropagation();"><i
+                                            class="fab fa-github"></i></a>
+                                    <a class="team-soc" href="https://s-rajaa.github.io/Portfolio/" target="_blank"
+                                        rel="noopener noreferrer" onclick="event.stopPropagation();"><i
+                                            class="fa fa-globe"></i></a>
                                 </div>
                             </div>
                             <div class="team-card-face team-card-back">
-                                <img src="https://res.cloudinary.com/dilsx2np3/image/upload/ar_1:1,c_auto/king_iwxaei.jpg" alt="Raja S">
+                                <img src="https://res.cloudinary.com/dilsx2np3/image/upload/ar_1:1,c_auto/king_iwxaei.jpg"
+                                    alt="Raja S" width="360" height="360" style="max-width:100%;height:100%" />
                             </div>
                         </div>
                     </div>
-                     <div class="card team-card reveal">
+                    <div class="card team-card reveal" onclick="toggleFlip(this.querySelector('.team-card-inner'))">
                         <div class="team-card-inner">
                             <div class="team-card-face team-card-front">
-                                <div class="team-avatar av-1"><img src="https://res.cloudinary.com/dilsx2np3/image/upload/ar_1:1,c_auto,g_north/dinu_roz7r2.jpg" alt="Dinesh Kumar V"></div>
+                                <div class="team-avatar av-1"><img
+                                        src="https://res.cloudinary.com/dilsx2np3/image/upload/ar_1:1,c_auto,g_north/dinu_roz7r2.jpg"
+                                        alt="Dinesh Kumar V" width="80" height="80" /></div>
                                 <div class="team-name">Dinesh Kumar V</div>
                                 <div class="team-role">Full-Stack Developer</div>
-                                <p style="color:var(--muted);font-size:.82rem;margin-top:10px;line-height:1.6">Passionate full-stack developer building dynamic and scalable web solutions.</p>
+                                <p style="color:var(--muted);font-size:.82rem;margin-top:10px;line-height:1.6">
+                                    Passionate full-stack developer building dynamic and scalable web solutions.</p>
                                 <div class="team-social">
-                                    <a class="team-soc" href="https://www.linkedin.com/in/dineshkumar-819003380/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="team-soc" href="https://github.com/Dinesh1-coder" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i class="fab fa-github"></i></a>
-                                    <a class="team-soc" href="https://dinesh1-coder.github.io/My-Portfolio/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i class="fa fa-globe"></i></a>
+                                    <a class="team-soc" href="https://www.linkedin.com/in/dineshkumar-819003380/"
+                                        target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                    <a class="team-soc" href="https://github.com/Dinesh1-coder" target="_blank"
+                                        rel="noopener noreferrer" onclick="event.stopPropagation();"><i
+                                            class="fab fa-github"></i></a>
+                                    <a class="team-soc" href="https://dinesh1-coder.github.io/My-Portfolio/"
+                                        target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><i
+                                            class="fa fa-globe"></i></a>
                                 </div>
                             </div>
                             <div class="team-card-face team-card-back">
-                                <img src="https://res.cloudinary.com/dilsx2np3/image/upload/ar_1:1,c_auto,g_north/dinu_roz7r2.jpg" alt="Dinesh Kumar V">
+                                <img src="https://res.cloudinary.com/dilsx2np3/image/upload/ar_1:1,c_auto,g_north/dinu_roz7r2.jpg"
+                                    alt="Dinesh Kumar V" width="360" height="360" style="max-width:100%;height:100%" />
                             </div>
                         </div>
                     </div>
@@ -3525,7 +3726,7 @@
                 <div class="projects-grid" id="projectsGrid"></div>
                 <div class="project-actions">
                     <div class="project-actions-title">Interested in working with us?</div>
-                    <div class="project-actions-sub">Book a free consultation call or send us a message about your
+                    <div class="project-actions-sub">Book a consultation call or send us a message about your
                         project</div>
                     <button class="btn-primary" onclick="openModal('book')"><i class="fa fa-calendar"></i>Book a
                         Call</button>
@@ -3623,6 +3824,10 @@
                     <input class="form-input" id="qtPhone" type="tel" placeholder="your phone number">
                 </div>
                 <div class="form-group">
+                    <label class="form-label">City *</label>
+                    <input class="form-input" id="qtCity" type="text" placeholder="Your City">
+                </div>
+                <div class="form-group">
                     <label class="form-label">Company Name</label>
                     <input class="form-input" id="qtCompany" type="text" placeholder="Your Company">
                 </div>
@@ -3650,7 +3855,8 @@
                         rows="4"></textarea>
                 </div>
             </div>
-            <button class="form-submit" id="quoteSubmitBtn"><i class="fa fa-paper-plane"></i> Submit Request</button>
+            <button class="form-submit" id="quoteSubmitBtn" onclick="submitQuote()"><i class="fa fa-paper-plane"></i>
+                Submit Request</button>
             <div class="form-msg" id="quoteMsg"></div>
         </div>
     </div>
@@ -3689,7 +3895,11 @@
                                 <div class="ci-icon"><i class="fa fa-envelope"></i></div>
                                 <div>
                                     <div class="ci-label">Email Address</div>
-                                    <div class="ci-val"><a href="/cdn-cgi/l/email-protection#056477616c6b636a7160666d3536456268646c692b666a68"><span class="__cf_email__" data-cfemail="c0a1b2a4a9aea6afb4a5a3a8f0f380a7ada1a9aceea3afad">[email&#160;protected]</span></a></div>
+                                    <div class="ci-val"><a
+                                            href="/cdn-cgi/l/email-protection#056477616c6b636a7160666d3536456268646c692b666a68"><span
+                                                class="__cf_email__"
+                                                data-cfemail="c0a1b2a4a9aea6afb4a5a3a8f0f380a7ada1a9aceea3afad">[email&#160;protected]</span></a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -3714,6 +3924,8 @@
                                     id="cEmail" type="email" placeholder="Your@company.com" /></div>
                             <div class="form-group"><label class="form-label">Phone</label><input class="form-input"
                                     id="cPhone" type="tel" placeholder="+91 98765 43210" /></div>
+                            <div class="form-group"><label class="form-label">City</label><input class="form-input"
+                                    id="cCity" type="text" placeholder="Your City" /></div>
                             <div class="form-group full"><label class="form-label">Subject</label><input
                                     class="form-input" id="cSubject" type="text" placeholder="Project Inquiry" /></div>
                             <div class="form-group full"><label class="form-label">Message</label><textarea
@@ -3799,21 +4011,41 @@
         <div class="modal" style="max-width:500px">
             <button class="modal-close" onclick="closeModal('email-config')"><i class="fa fa-times"></i></button>
             <div class="modal-title">EmailJS 4-Key Manager</div>
-            <div class="modal-sub">Update and replace these keys: publicKey, serviceId, clientTemplate, adminTemplate.</div>
-            <div class="form-grid">
-                <div class="form-group full"><label class="form-label">Account Name</label><input class="form-input"
-                        id="emAccName" placeholder="Secondary Account" /></div>
-                <div class="form-group full"><label class="form-label">Public Key</label><input class="form-input"
-                        id="emPublicKey" placeholder="user_xxxx..." /></div>
-                <div class="form-group full"><label class="form-label">Service ID</label><input class="form-input"
-                        id="emServiceId" placeholder="service_xxxx..." /></div>
-                <div class="form-group full"><label class="form-label">Client Template ID</label><input
-                        class="form-input" id="emClientTemplate" placeholder="template_xxxx..." /></div>
-                <div class="form-group full"><label class="form-label">Admin Template ID</label><input
-                        class="form-input" id="emAdminTemplate" placeholder="template_xxxx..." /></div>
+            <div class="modal-sub">Restricted owner access. Enter password to manage keys.</div>
+
+            <div id="emConfigLogin">
+                <div class="form-group full" style="margin-top:20px">
+                    <label class="form-label">Admin Password</label>
+                    <input class="form-input" type="password" id="emConfigPass" placeholder="••••••••"
+                        onkeyup="if(this.value === 'ard2025') unlockEmailConfig()" />
+                    <p style="color:var(--muted);font-size:0.7rem;margin-top:8px">Enter 'ard2025' to unlock manager.</p>
+                </div>
             </div>
-            <button class="form-submit" onclick="saveEmailJSConfig()"><i class="fa fa-save"></i> Save &
-                Activate</button>
+
+            <div id="emConfigLocked" style="display:none">
+                <div class="form-group full" style="margin-top:20px">
+                    <label class="form-label">Select Registered Account</label>
+                    <select class="form-input" id="emAccSelect" onchange="switchEmailAccount(this.value)">
+                        <option value="">Custom / Manual Entry</option>
+                        <option value="acc1">Account 1 — onum2illai@gmail.com</option>
+                        <option value="acc2">Account 2 — onum3illai@gmail.com</option>
+                    </select>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group full"><label class="form-label">Account Label</label><input
+                            class="form-input" id="emAccName" placeholder="Secondary Account" /></div>
+                    <div class="form-group full"><label class="form-label">Public Key</label><input class="form-input"
+                            id="emPublicKey" placeholder="user_xxxx..." /></div>
+                    <div class="form-group full"><label class="form-label">Service ID</label><input class="form-input"
+                            id="emServiceId" placeholder="service_xxxx..." /></div>
+                    <div class="form-group full"><label class="form-label">Client Template ID</label><input
+                            class="form-input" id="emClientTemplate" placeholder="template_xxxx..." /></div>
+                    <div class="form-group full"><label class="form-label">Admin Template ID</label><input
+                            class="form-input" id="emAdminTemplate" placeholder="template_xxxx..." /></div>
+                </div>
+                <button class="form-submit" onclick="saveEmailJSConfig()"><i class="fa fa-save"></i> Save &
+                    Activate</button>
+            </div>
             <div class="form-msg" id="emConfigMsg"></div>
         </div>
     </div>
@@ -3825,18 +4057,40 @@
             <div class="modal-title"><i class="fa fa-plus"></i> Add New Project</div>
             <div class="modal-sub">Add a new project to your portfolio.</div>
             <div class="form-grid">
-                <div class="form-group"><label class="form-label">Project Name</label><input class="form-input" id="pName" placeholder="ShopWave Platform" /></div>
-                <div class="form-group"><label class="form-label">Category</label><input class="form-input" id="pCat" placeholder="E-Commerce · Full-Stack" /></div>
-                <div class="form-group"><label class="form-label">Cost / Budget</label><input class="form-input" id="pCost" placeholder="$8,500" /></div>
-                <div class="form-group"><label class="form-label">Stars (1–5)</label><input class="form-input" type="number" id="pStars" min="1" max="5" value="5" /></div>
-                <div class="form-group full"><label class="form-label">Client Review</label><textarea class="form-input" id="pReview" rows="3" placeholder="ARD transformed our business..."></textarea></div>
-                <div class="form-group full"><label class="form-label">Client Name</label><input class="form-input" id="pClient" placeholder="— Priya S., CEO" /></div>
-                <div class="form-group full"><label class="form-label">Card Color</label><div class="pt-colors" id="ptColors"><div class="pt-color-btn pt-c1 selected" onclick="selectColor('pt-1',this)"></div><div class="pt-color-btn pt-c2" onclick="selectColor('pt-2',this)"></div><div class="pt-color-btn pt-c3" onclick="selectColor('pt-3',this)"></div><div class="pt-color-btn pt-c4" onclick="selectColor('pt-4',this)"></div><div class="pt-color-btn pt-c5" onclick="selectColor('pt-5',this)"></div><div class="pt-color-btn pt-c6" onclick="selectColor('pt-6',this)"></div></div></div>
-                <div class="form-group full"><label class="form-label">Icon (FontAwesome class)</label><input class="form-input" id="pIcon" placeholder="fa-shopping-cart" /></div>
-                <div class="form-group full"><label class="form-label">Project Link (Visit Live Site)</label><input class="form-input" id="pLink" placeholder="https://example.com" /></div>
-                <div class="form-group full"><label class="form-label">Project Image (Optional)</label><input class="form-input" type="file" id="pImageFile" accept="image/*" style="padding:10px 0" /><p style="color:var(--muted);font-size:0.7rem;margin-top:4px">If selected, this will replace the colored thumbnail.</p></div>
+                <div class="form-group"><label class="form-label">Project Name</label><input class="form-input"
+                        id="pName" placeholder="ShopWave Platform" /></div>
+                <div class="form-group"><label class="form-label">Category</label><input class="form-input" id="pCat"
+                        placeholder="E-Commerce · Full-Stack" /></div>
+                <div class="form-group"><label class="form-label">Cost / Budget</label><input class="form-input"
+                        id="pCost" placeholder="$8,500" /></div>
+                <div class="form-group"><label class="form-label">Stars (1–5)</label><input class="form-input"
+                        type="number" id="pStars" min="1" max="5" value="5" /></div>
+                <div class="form-group full"><label class="form-label">Client Review</label><textarea class="form-input"
+                        id="pReview" rows="3" placeholder="ARD transformed our business..."></textarea></div>
+                <div class="form-group full"><label class="form-label">Client Name</label><input class="form-input"
+                        id="pClient" placeholder="— Priya S., CEO" /></div>
+                <div class="form-group full"><label class="form-label">Card Color</label>
+                    <div class="pt-colors" id="ptColors">
+                        <div class="pt-color-btn pt-c1 selected" onclick="selectColor('pt-1',this)"></div>
+                        <div class="pt-color-btn pt-c2" onclick="selectColor('pt-2',this)"></div>
+                        <div class="pt-color-btn pt-c3" onclick="selectColor('pt-3',this)"></div>
+                        <div class="pt-color-btn pt-c4" onclick="selectColor('pt-4',this)"></div>
+                        <div class="pt-color-btn pt-c5" onclick="selectColor('pt-5',this)"></div>
+                        <div class="pt-color-btn pt-c6" onclick="selectColor('pt-6',this)"></div>
+                    </div>
+                </div>
+                <div class="form-group full"><label class="form-label">Icon (FontAwesome class)</label><input
+                        class="form-input" id="pIcon" placeholder="fa-shopping-cart" /></div>
+                <div class="form-group full"><label class="form-label">Project Link (Visit Live Site)</label><input
+                        class="form-input" id="pLink" placeholder="https://example.com" /></div>
+                <div class="form-group full"><label class="form-label">Project Image (Optional)</label><input
+                        class="form-input" type="file" id="pImageFile" accept="image/*" style="padding:10px 0" />
+                    <p style="color:var(--muted);font-size:0.7rem;margin-top:4px">If selected, this will replace the
+                        colored thumbnail.</p>
+                </div>
             </div>
-            <button class="form-submit" onclick="addProjectFromModal(this)"><i class="fa fa-plus"></i> Add Project</button>
+            <button class="form-submit" onclick="addProjectFromModal(this)"><i class="fa fa-plus"></i> Add
+                Project</button>
             <div class="form-msg" id="addProjMsg"></div>
         </div>
     </div>
@@ -3848,13 +4102,23 @@
             <div class="modal-title"><i class="fa fa-plug"></i> Email Port Configuration</div>
             <div class="modal-sub">Configure your email server port settings.</div>
             <div class="form-grid">
-                <div class="form-group full"><label class="form-label">SMTP Server</label><input class="form-input" id="portSmtpServer" placeholder="smtp.gmail.com" /></div>
-                <div class="form-group"><label class="form-label">Port</label><input class="form-input" id="portNumber" type="number" placeholder="587" value="587" /></div>
-                <div class="form-group"><label class="form-label">Encryption</label><select class="form-input" id="portEncryption"><option value="TLS">TLS</option><option value="SSL">SSL</option><option value="None">None</option></select></div>
-                <div class="form-group full"><label class="form-label">Email Account</label><input class="form-input" id="portEmail" placeholder="your-email@example.com" /></div>
-                <div class="form-group full"><label class="form-label">Password</label><input class="form-input" id="portPassword" type="password" placeholder="••••••••" /></div>
+                <div class="form-group full"><label class="form-label">SMTP Server</label><input class="form-input"
+                        id="portSmtpServer" placeholder="smtp.gmail.com" /></div>
+                <div class="form-group"><label class="form-label">Port</label><input class="form-input" id="portNumber"
+                        type="number" placeholder="587" value="587" /></div>
+                <div class="form-group"><label class="form-label">Encryption</label><select class="form-input"
+                        id="portEncryption">
+                        <option value="TLS">TLS</option>
+                        <option value="SSL">SSL</option>
+                        <option value="None">None</option>
+                    </select></div>
+                <div class="form-group full"><label class="form-label">Email Account</label><input class="form-input"
+                        id="portEmail" placeholder="your-email@example.com" /></div>
+                <div class="form-group full"><label class="form-label">Password</label><input class="form-input"
+                        id="portPassword" type="password" placeholder="••••••••" /></div>
             </div>
-            <button class="form-submit" onclick="savePortConfig()"><i class="fa fa-save"></i> Save Configuration</button>
+            <button class="form-submit" onclick="savePortConfig()"><i class="fa fa-save"></i> Save
+                Configuration</button>
             <div class="form-msg" id="portConfigMsg"></div>
         </div>
     </div>
@@ -3872,6 +4136,8 @@
                         type="email" placeholder="Your@company.com" /></div>
                 <div class="form-group"><label class="form-label">Phone</label><input class="form-input" id="bkPhone"
                         type="tel" placeholder="+91 98765 43210" /></div>
+                <div class="form-group"><label class="form-label">City</label><input class="form-input" id="bkCity"
+                        type="text" placeholder="Your City" /></div>
                 <div class="form-group"><label class="form-label">Company</label><input class="form-input"
                         id="bkCompany" type="text" placeholder="Your Company" /></div>
                 <div class="form-group full"><label class="form-label">Preferred Date &amp;Time</label><input
@@ -3984,6 +4250,8 @@
                         type="email" placeholder="Your@company.com" /></div>
                 <div class="form-group"><label class="form-label">Phone</label><input class="form-input" id="smPhone"
                         type="tel" placeholder="your Number" /></div>
+                <div class="form-group"><label class="form-label">City</label><input class="form-input" id="smCity"
+                        type="text" placeholder="Your City" /></div>
                 <div class="form-group"><label class="form-label">Subject *</label><input class="form-input"
                         id="smSubject" type="text" placeholder="Project Inquiry" /></div>
                 <div class="form-group full"><label class="form-label">Message *</label><textarea class="form-input"
@@ -4007,7 +4275,8 @@
                     <h3
                         style="color:var(--white);font-family:'Bebas Neue',sans-serif;font-size:1.6rem;margin-bottom:6px">
                         Owner Access</h3>
-                    <p style="color:var(--muted);font-size:.85rem;margin-bottom:24px">Owner access only — enter your password</p>
+                    <p style="color:var(--muted);font-size:.85rem;margin-bottom:24px">Owner access only — enter your
+                        password</p>
                     <input type="hidden" id="adminUser" value="admin" />
                     <div class="form-group" style="margin-bottom:20px;text-align:left"><label
                             class="form-label">Password</label><input class="form-input" type="password" id="adminPass"
@@ -4028,18 +4297,18 @@
                 <div id="tabAdd" class="proj-form active">
                     <div class="form-grid">
                         <div class="form-group"><label class="form-label">Project Name</label><input class="form-input"
-                            id="adminPName" placeholder="ShopWave Platform" /></div>
+                                id="adminPName" placeholder="ShopWave Platform" /></div>
                         <div class="form-group"><label class="form-label">Category</label><input class="form-input"
-                            id="adminPCat" placeholder="E-Commerce · Full-Stack" /></div>
+                                id="adminPCat" placeholder="E-Commerce · Full-Stack" /></div>
                         <div class="form-group"><label class="form-label">Cost / Budget</label><input class="form-input"
-                            id="adminPCost" placeholder="$8,500" /></div>
+                                id="adminPCost" placeholder="$8,500" /></div>
                         <div class="form-group"><label class="form-label">Stars (1–5)</label><input class="form-input"
-                            type="number" id="adminPStars" min="1" max="5" value="5" /></div>
+                                type="number" id="adminPStars" min="1" max="5" value="5" /></div>
                         <div class="form-group full"><label class="form-label">Client Review</label><textarea
-                            class="form-input" id="adminPReview" rows="3"
+                                class="form-input" id="adminPReview" rows="3"
                                 placeholder="ARD transformed our business..."></textarea></div>
                         <div class="form-group full"><label class="form-label">Client Name</label><input
-                            class="form-input" id="adminPClient" placeholder="— Priya S., CEO" /></div>
+                                class="form-input" id="adminPClient" placeholder="— Priya S., CEO" /></div>
                         <div class="form-group full">
                             <label class="form-label">Card Color</label>
                             <div class="pt-colors" id="adminPtColors">
@@ -4052,9 +4321,10 @@
                             </div>
                         </div>
                         <div class="form-group full"><label class="form-label">Icon (FontAwesome class)</label><input
-                            class="form-input" id="adminPIcon" placeholder="fa-shopping-cart" /></div>
+                                class="form-input" id="adminPIcon" placeholder="fa-shopping-cart" /></div>
                         <div class="form-group full"><label class="form-label">Project Link (Visit Live
-                            Site)</label><input class="form-input" id="adminPLink" placeholder="https://example.com" />
+                                Site)</label><input class="form-input" id="adminPLink"
+                                placeholder="https://example.com" />
                         </div>
                         <div class="form-group full">
                             <label class="form-label">Project Image (Optional - Use ImgBB)</label>
@@ -4065,7 +4335,7 @@
                         </div>
                     </div>
                     <button class="form-submit" onclick="addProject()"><i class="fa fa-plus"></i>Add Project</button>
-                        <div class="form-msg" id="adminAddProjMsg"></div>
+                    <div class="form-msg" id="adminAddProjMsg"></div>
                 </div>
                 <div id="tabManage" class="proj-form">
                     <p style="color:var(--muted);font-size:.85rem;margin-bottom:16px">Manage user-added projects
@@ -4077,8 +4347,9 @@
     </div>
     <!-- WHATSAPP FLOATING BUTTON (Long Press for Admin) -->
     <div class="whatsapp-float" id="waFloat">
-        <a href="https://wa.me/918610852614" class="whatsapp-btn" id="waBtn" target="_blank">
-            <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/918610852614" class="whatsapp-btn" id="waBtn" target="_blank" rel="noopener"
+            aria-label="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
         </a>
         <div class="whatsapp-label">Chat with ARD</div>
     </div>
@@ -4088,19 +4359,25 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <img class="logo-img"
-                        src="https://res.cloudinary.com/dilsx2np3/image/upload/v1777214045/ARD_ntgdsl.jpg"
-                        alt="ARD Infotech" />
+                        src="https://res.cloudinary.com/dilsx2np3/image/upload/w_140,h_140,c_fill,f_auto,q_auto/v1777214045/ARD_ntgdsl.jpg"
+                        alt="ARD Infotech" width="70" height="70" loading="lazy" />
                     <p class="footer-desc">Building world-class digital products for startups and enterprises since
                         2025. Namakkal, India.</p>
                     <div class="footer-socials">
-                        <a class="footer-soc" href="https://www.instagram.com/ard_infotech_03?igsh=bm1jYTBhaGxyMmVx"><i class="fab fa-instagram"></i></a>
-                        <a class="footer-soc" href="https://github.com/ardinfotech03-debug"><i class="fab fa-github"></i></a>
-                        <a class="footer-soc" id="emailConfigBtn" title="Tap: Open Mail | Hold 4s: EmailJS Keys"><i
-                                class="fa fa-envelope"></i></a>
+                        <a class="footer-soc" href="https://www.instagram.com/ard_infotech_03?igsh=bm1jYTBhaGxyMmVx"
+                            target="_blank" rel="noopener" aria-label="Follow us on Instagram"><i
+                                class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a class="footer-soc" href="https://github.com/ardinfotech03-debug" target="_blank"
+                            rel="noopener" aria-label="View our GitHub profile"><i class="fab fa-github"
+                                aria-hidden="true"></i></a>
+                        <a class="footer-soc" id="emailConfigBtn" title="Tap: Open Mail | Hold 4s: EmailJS Keys"
+                            aria-label="Send us an email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <h3
+                        style="font-family:'DM Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,0.8);margin-bottom:16px">
+                        Company</h3>
                     <ul>
                         <li><a href="#" onclick="showPage('about');return false;">About Us</a></li>
                         <li><a href="#" onclick="showPage('projects');return false;">Our Work</a></li>
@@ -4108,7 +4385,9 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Services</h4>
+                    <h3
+                        style="font-family:'DM Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,0.8);margin-bottom:16px">
+                        Services</h3>
                     <ul>
                         <li><a href="#" onclick="showPage('services');return false;">Web Development</a></li>
                         <li><a href="#" onclick="showPage('services');return false;">UI/UX Design</a></li>
@@ -4116,7 +4395,9 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h3
+                        style="font-family:'DM Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,0.8);margin-bottom:16px">
+                        Contact</h3>
                     <ul>
                         <li><a href="mailto:ardinfotech03@gmail.com">ardinfotech03@gmail.com</a></li>
                         <li><a href="tel:+919600588274">+91 96005 88274</a></li>
@@ -4141,12 +4422,24 @@
         var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzFWvGIv9zyNEenUuoSak-8d17FzG6Kl4aL48TbTwC_bDtE6HMnISjyS6jYRG0TQ83C/exec';
 
         // EMAILJS INIT
-        var activeEmailJS = {
-            publicKey: "E0t-PHv_ap4-0pG6X",
-            serviceId: "service_gxq0r6v",
-            adminTemplate: "template_3q9xiqq",
-            clientTemplate: "template_p4pz2rs"
+        var EMAILJS_ACCOUNTS = {
+            acc1: {
+                accName: "onum2illai@gmail.com",
+                publicKey: "E0t-PHv_ap4-0pG6X",
+                serviceId: "service_gxq0r6v",
+                adminTemplate: "template_3q9xiqq",
+                clientTemplate: "template_p4pz2rs"
+            },
+            acc2: {
+                accName: "onum3illai@gmail.com",
+                publicKey: "k6crOpzPQEX4CCqzt",
+                serviceId: "service_esw0o37",
+                adminTemplate: "template_gv0fnyw",
+                clientTemplate: "template_e4ux6zp"
+            }
         };
+
+        var activeEmailJS = EMAILJS_ACCOUNTS.acc1;
 
         var defaultProjects = [];
         var seedFeedback = [];
@@ -4170,22 +4463,29 @@
         // INIT
         // ============================================
         window.addEventListener('load', function () {
+            var loader = document.getElementById('loader');
+            // Hide loader quickly — don't block LCP behind a 2.4s timeout
             setTimeout(function () {
-                var loader = document.getElementById('loader');
                 if (loader) loader.classList.add('hidden');
-                initReveal();
-                renderProjects(); updateProjectCount();
-                renderFeedback();
-                initFeedbackForm();
-                initPricingButtons();
-                initWhatsAppLongPress();
-                initEmailConfigLongPress();
-                initTouchTapEffects();
-                // FETCH LIVE DATA
+            }, 1200);
+
+            // Initialize UI components immediately
+            initReveal();
+            renderProjects(); updateProjectCount();
+            renderFeedback();
+            initFeedbackForm();
+            initPricingButtons();
+            initWhatsAppLongPress();
+            initEmailConfigLongPress();
+            initTouchTapEffects();
+
+            // DEFER heavy API calls to after page is interactive (does not block LCP)
+            var scheduleIdle = window.requestIdleCallback || function (cb) { setTimeout(cb, 200); };
+            scheduleIdle(function () {
                 loadProjectsFromSheet();
                 loadFeedbackFromSheet();
                 loadEmailJSConfig();
-            }, 2400);
+            });
         });
 
         // ============================================
@@ -4279,8 +4579,12 @@
                     longPressFired = true;
                     suppressClick = true;
                     clearTimeout(pressTimer);
+                    // Reset modal state
+                    document.getElementById('emConfigPass').value = '';
+                    document.getElementById('emConfigLogin').style.display = 'block';
+                    document.getElementById('emConfigLocked').style.display = 'none';
+                    document.getElementById('emConfigMsg').textContent = '';
                     openModal('email-config');
-                    showToast('EmailJS 4-key Manager Opened ✉️');
                     if ("vibrate" in navigator) navigator.vibrate(200);
                 }, longPressThreshold);
             });
@@ -4304,8 +4608,12 @@
                     pressTimer = setTimeout(function () {
                         longPressFired = true;
                         suppressClick = true;
+                        // Reset modal state
+                        document.getElementById('emConfigPass').value = '';
+                        document.getElementById('emConfigLogin').style.display = 'block';
+                        document.getElementById('emConfigLocked').style.display = 'none';
+                        document.getElementById('emConfigMsg').textContent = '';
                         openModal('email-config');
-                        showToast('EmailJS 4-key Manager Opened ✉️');
                     }, longPressThreshold);
                 });
                 emailBtn.addEventListener('touchstart', function () {
@@ -4315,8 +4623,12 @@
                     pressTimer = setTimeout(function () {
                         longPressFired = true;
                         suppressClick = true;
+                        // Reset modal state
+                        document.getElementById('emConfigPass').value = '';
+                        document.getElementById('emConfigLogin').style.display = 'block';
+                        document.getElementById('emConfigLocked').style.display = 'none';
+                        document.getElementById('emConfigMsg').textContent = '';
                         openModal('email-config');
-                        showToast('EmailJS 4-key Manager Opened ✉️');
                         if ("vibrate" in navigator) navigator.vibrate(200);
                     }, longPressThreshold);
                 }, { passive: true });
@@ -4404,12 +4716,12 @@
             var encryption = document.getElementById('portEncryption').value;
             var email = document.getElementById('portEmail').value.trim();
             var password = document.getElementById('portPassword').value.trim();
-            
+
             if (!smtpServer || !port || !email) {
                 showFormMsg('portConfigMsg', 'Please fill in all required fields.', 'error');
                 return;
             }
-            
+
             // Save to localStorage
             try {
                 var portConfig = {
@@ -4428,8 +4740,31 @@
         }
 
         // ============================================
-        // SYNC EMAIL CONFIG
+        // SECRET EMAIL CONFIG MANAGER logic
         // ============================================
+        function unlockEmailConfig() {
+            var pass = document.getElementById('emConfigPass').value;
+            if (pass === ADMIN_PASS) {
+                document.getElementById('emConfigLogin').style.display = 'none';
+                document.getElementById('emConfigLocked').style.display = 'block';
+                showToast('Correct Password. Manager Unlocked! \ud83d\udd13');
+                if ("vibrate" in navigator) navigator.vibrate(100);
+            }
+        }
+
+        function switchEmailAccount(accId) {
+            if (!accId) return;
+            var acc = EMAILJS_ACCOUNTS[accId];
+            if (acc) {
+                document.getElementById('emAccName').value = acc.accName;
+                document.getElementById('emPublicKey').value = acc.publicKey;
+                document.getElementById('emServiceId').value = acc.serviceId;
+                document.getElementById('emClientTemplate').value = acc.clientTemplate;
+                document.getElementById('emAdminTemplate').value = acc.adminTemplate;
+                showToast('Switched to ' + acc.accName);
+            }
+        }
+
         function loadEmailJSConfig() {
             if (typeof SHEET_URL === 'undefined') return;
             fetch(SHEET_URL + '?action=email_config')
@@ -4438,7 +4773,7 @@
                     if (data && data.publicKey) {
                         activeEmailJS = data;
                         if (typeof emailjs !== 'undefined') emailjs.init(activeEmailJS.publicKey);
-                        // Populate modal fields
+                        // Populate modal fields for when it is unlocked
                         document.getElementById('emAccName').value = data.accName || '';
                         document.getElementById('emPublicKey').value = data.publicKey;
                         document.getElementById('emServiceId').value = data.serviceId;
@@ -4449,6 +4784,12 @@
         }
 
         function saveEmailJSConfig() {
+            var pass = document.getElementById('emConfigPass').value;
+            if (pass !== ADMIN_PASS) {
+                showFormMsg('emConfigMsg', 'Session expired or invalid password.', 'error');
+                return;
+            }
+
             var data = {
                 type: 'email_config',
                 accName: document.getElementById('emAccName').value.trim(),
@@ -4471,18 +4812,26 @@
             };
             if (typeof emailjs !== 'undefined') emailjs.init(activeEmailJS.publicKey);
 
-            fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) })
-                .then(function () {
-                    showFormMsg('emConfigMsg', 'Configuration Updated & Activated! 🚀', 'success');
-                    showToast('EmailJS keys updated!');
+            if (typeof SHEET_URL !== 'undefined') {
+                showFormMsg('emConfigMsg', '<i class="fa fa-spinner fa-spin"></i> Saving to database...', 'success');
+                fetch(SHEET_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(data)
+                }).then(function () {
+                    showFormMsg('emConfigMsg', 'Keys Saved & Activated! \ud83c\udf89', 'success');
+                    showToast('Email Settings Updated! \u2705');
                     setTimeout(function () { closeModal('email-config'); }, 2000);
-                }).catch(e => { showFormMsg('emConfigMsg', 'Error updating config.', 'error'); });
+                }).catch(function (e) {
+                    showFormMsg('emConfigMsg', 'Saved locally, but server failed.', 'success');
+                });
+            }
         }
 
         // ============================================
         // CURSOR (show on desktop layout, hide on mobile layout)
         // ============================================
-        (function() {
+        (function () {
             var isCoarseTouch = window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
             var c = document.getElementById('cursor');
             var r = document.getElementById('cursorRing');
@@ -4541,9 +4890,26 @@
             }, 400);
         }
 
+        function toggleFlip(el) {
+            if (!el) return;
+            var isFlipped = el.classList.contains('flipped');
+            document.querySelectorAll('.team-card-inner.flipped').forEach(function (f) {
+                f.classList.remove('flipped');
+            });
+            if (!isFlipped) el.classList.add('flipped');
+        }
+
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.team-card')) {
+                document.querySelectorAll('.team-card-inner.flipped').forEach(function (f) {
+                    f.classList.remove('flipped');
+                });
+            }
+        });
+
         function mobileNavigate(id) {
             closeMobileMenuAnimated();
-            setTimeout(function() { showPage(id); }, 50);
+            setTimeout(function () { showPage(id); }, 50);
         }
 
         function showPage(id) {
@@ -4661,14 +5027,14 @@
 
         // Load added projects from Google Sheets (live projects)
         function getDeletedProjectIds() {
-            try { return JSON.parse(localStorage.getItem('ard_deleted_ids') || '[]'); } catch(e) { return []; }
+            try { return JSON.parse(localStorage.getItem('ard_deleted_ids') || '[]'); } catch (e) { return []; }
         }
         function saveDeletedProjectId(id) {
             try {
                 var ids = getDeletedProjectIds();
                 if (ids.indexOf(String(id)) === -1) ids.push(String(id));
                 localStorage.setItem('ard_deleted_ids', JSON.stringify(ids));
-            } catch(e) {}
+            } catch (e) { }
         }
         function loadProjectsFromSheet() {
             if (typeof SHEET_URL === 'undefined') return;
@@ -4878,6 +5244,7 @@
             var email = document.getElementById('bkEmail').value.trim();
             if (!name || !email) { showFormMsg('bookMsg', 'Please fill in Name and Email.', 'error'); return; }
             var phone = document.getElementById('bkPhone').value.trim() || '';
+            var city = document.getElementById('bkCity').value.trim() || '';
             var company = document.getElementById('bkCompany').value.trim() || '';
             var date = document.getElementById('bkDate').value || '';
             var note = document.getElementById('bkNote').value.trim() || '';
@@ -4888,6 +5255,7 @@
                 name: name,
                 email: email,
                 phone: phone,
+                city: city,
                 company: company,
                 date: date,
                 budget: '',
@@ -4903,32 +5271,35 @@
                 if (btn) { btn.classList.remove('btn-loading'); btn.innerHTML = '<i class="fa fa-calendar-check"></i> Confirm Booking'; }
                 showFormMsg('bookMsg', 'Booking confirmed! A confirmation email has been sent. ✅', 'success');
                 showToast('Booking confirmed! 📅');
+                // Clear fields
+                ['bkName', 'bkEmail', 'bkPhone', 'bkCity', 'bkCompany', 'bkDate', 'bkNote'].forEach(id => { var el = document.getElementById(id); if (el) el.value = ''; });
                 setTimeout(function () { closeModal('book'); }, 2500);
             }, 1200);
         }
 
         function sendBookingEmail(data) {
             if (typeof emailjs !== 'undefined') {
+                if (activeEmailJS.publicKey) emailjs.init(activeEmailJS.publicKey);
                 var adminParams = {
-                    to_email: 'ardinfotech03@gmail.com',
                     from_name: data.name,
                     from_email: data.email,
+                    email: data.email,
                     phone: data.phone || 'N/A',
+                    city: data.city || 'N/A',
                     company: data.company || 'N/A',
                     date: data.date || 'Not specified',
-                    message: data.note || 'No notes provided',
-                    type: 'Booking Request'
-                };
-
-                var userParams = {
-                    to_email: data.email,
-                    from_name: data.name,
-                    type: 'Booking Request'
+                    message: data.notes || 'No notes provided',
+                    package: 'Booking Call',
+                    type: 'Call Booking',
+                    budget: 'N/A',
+                    form_type: 'New Booking',
+                    name: data.name
                 };
 
                 // Send to admin
                 emailjs.send(activeEmailJS.serviceId, activeEmailJS.adminTemplate, adminParams);
-                // Send to client after a short delay
+
+                // Send to client
                 setTimeout(function () {
                     var userParams = {
                         to_email: data.email,
@@ -4936,7 +5307,7 @@
                         from_name: data.name,
                         name: data.name,
                         to_name: data.name,
-                        type: 'Booking Request'
+                        form_type: 'Call Booking'
                     };
                     emailjs.send(activeEmailJS.serviceId, activeEmailJS.clientTemplate, userParams);
                 }, 800);
@@ -4959,6 +5330,7 @@
         function handleContact() {
             var name = document.getElementById('cFname').value.trim();
             var email = document.getElementById('cEmail').value.trim();
+            var city = document.getElementById('cCity').value.trim() || '';
             var msg = document.getElementById('cMessage').value.trim();
             if (!name || !email || !msg) { showFormMsg('contactMsg', 'Please fill in required fields.', 'error'); return; }
 
@@ -4970,19 +5342,37 @@
                 name: name,
                 email: email,
                 phone: phone,
+                city: city,
                 subject: subject,
                 message: msg,
-                country: '',
-                serviceType: subject,
+                websiteType: subject, // Map subject to websiteType column in sheet
                 timestamp: new Date().toISOString()
             };
 
             if (typeof emailjs !== 'undefined') {
-                var adminParams = { name: name, email: email, phone: phone, type: 'Contact Message', message: msg };
+                if (activeEmailJS.publicKey) emailjs.init(activeEmailJS.publicKey);
+                var adminParams = {
+                    from_name: name,
+                    from_email: email,
+                    email: email,
+                    phone: phone,
+                    city: city,
+                    type: 'Contact Message',
+                    message: msg,
+                    form_type: 'New Contact Message',
+                    name: name
+                };
                 emailjs.send(activeEmailJS.serviceId, activeEmailJS.adminTemplate, adminParams);
 
                 setTimeout(function () {
-                    var userParams = { to_email: email, email: email, from_name: name, name: name, to_name: name, form_type: 'Contact Message' };
+                    var userParams = {
+                        to_email: email,
+                        email: email,
+                        from_name: name,
+                        name: name,
+                        to_name: name,
+                        form_type: 'New Contact Message'
+                    };
                     emailjs.send(activeEmailJS.serviceId, activeEmailJS.clientTemplate, userParams);
                 }, 800);
             }
@@ -4993,7 +5383,8 @@
 
             showFormMsg('contactMsg', "Message sent! We'll get back to you within 24 hours. ✅", 'success');
             showToast('Message sent! 📨');
-            ['cFname', 'cLname', 'cEmail', 'cPhone', 'cSubject', 'cMessage'].forEach(id => { var el = document.getElementById(id); if (el) el.value = ''; });
+            // Clear fields
+            ['cFname', 'cLname', 'cEmail', 'cPhone', 'cCity', 'cSubject', 'cMessage'].forEach(id => { var el = document.getElementById(id); if (el) el.value = ''; });
         }
 
         function handleOrder(tier) {
@@ -5031,22 +5422,44 @@
             if (btn) { btn.classList.add('btn-loading'); btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...'; }
 
             var phone = document.getElementById('smPhone').value.trim() || '';
+            var city = document.getElementById('smCity').value.trim() || '';
             var data = {
                 type: 'contact',
                 name: name,
                 email: email,
                 phone: phone,
+                city: city,
                 subject: subject,
                 message: message,
+                websiteType: subject, // Map subject to websiteType column in sheet
                 timestamp: new Date().toISOString()
             };
 
             if (typeof emailjs !== 'undefined') {
-                var adminParams = { name: name, email: email, phone: phone, type: 'Project Inquiry: ' + subject, message: message };
+                if (activeEmailJS.publicKey) emailjs.init(activeEmailJS.publicKey);
+                var adminParams = {
+                    from_name: name,
+                    from_email: email,
+                    email: email,
+                    phone: phone,
+                    city: city,
+                    type: 'Project Inquiry',
+                    subject: subject,
+                    message: message,
+                    form_type: 'New Project Message',
+                    name: name
+                };
                 emailjs.send(activeEmailJS.serviceId, activeEmailJS.adminTemplate, adminParams);
 
                 setTimeout(function () {
-                    var userParams = { to_email: email, email: email, from_name: name, name: name, to_name: name, type: 'Project Inquiry' };
+                    var userParams = {
+                        to_email: email,
+                        email: email,
+                        from_name: name,
+                        name: name,
+                        to_name: name,
+                        form_type: 'New Project Message'
+                    };
                     emailjs.send(activeEmailJS.serviceId, activeEmailJS.clientTemplate, userParams);
                 }, 800);
             }
@@ -5057,6 +5470,8 @@
                 if (btn) { btn.classList.remove('btn-loading'); btn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message'; }
                 showFormMsg('sendmsgMsg', "Message sent! We'll get back to you within 24 hours. ✅", 'success');
                 showToast('Message sent! 📨');
+                // Clear fields
+                ['smName', 'smEmail', 'smPhone', 'smCity', 'smSubject', 'smMessage'].forEach(id => { var el = document.getElementById(id); if (el) el.value = ''; });
                 setTimeout(function () { closeModal('sendmsg'); }, 2500);
             }, 800);
         }
@@ -5261,13 +5676,22 @@
         function updateProjectCount() {
             var el = document.getElementById('project-count');
             var el2 = document.getElementById('about-project-count');
-            var end = getAllProjects().length;
+            var hcEl = document.getElementById('happy-clients-count');
+
+            var totalProjects = getAllProjects().length;
+            var totalFeedback = (seedFeedback || []).length + (appState.userFeedback || []).length;
+            var happyClients = 150 + totalProjects + totalFeedback;
+
             var duration = 1200, startTime = performance.now();
             function tick(now) {
                 var progress = Math.min((now - startTime) / duration, 1);
-                var val = Math.floor(progress * end) + '+';
-                if (el) el.textContent = val;
-                if (el2) el2.textContent = val;
+                var projVal = Math.floor(progress * totalProjects);
+                var hcVal = Math.floor(progress * happyClients);
+
+                if (el) el.textContent = projVal + '+';
+                if (el2) el2.textContent = projVal + '+';
+                if (hcEl) hcEl.textContent = hcVal + '+';
+
                 if (progress < 1) requestAnimationFrame(tick);
             }
             requestAnimationFrame(tick);
@@ -5281,16 +5705,16 @@
             var isLight = document.body.classList.toggle('light-mode');
             var icon = isLight ? '☀️' : '🌙';
             var btns = document.querySelectorAll('#themeToggleBtn, #mobileThemeBtn');
-            btns.forEach(function(b){ b.textContent = icon; });
-            try { localStorage.setItem('ardTheme', isLight ? 'light' : 'dark'); } catch(e){}
+            btns.forEach(function (b) { b.textContent = icon; });
+            try { localStorage.setItem('ardTheme', isLight ? 'light' : 'dark'); } catch (e) { }
         }
-        (function(){
+        (function () {
             try {
                 if (localStorage.getItem('ardTheme') === 'light') {
                     document.body.classList.add('light-mode');
-                    document.querySelectorAll('#themeToggleBtn, #mobileThemeBtn').forEach(function(b){ b.textContent = '☀️'; });
+                    document.querySelectorAll('#themeToggleBtn, #mobileThemeBtn').forEach(function (b) { b.textContent = '☀️'; });
                 }
-            } catch(e){}
+            } catch (e) { }
         })();
 
         // ============================================
@@ -5334,14 +5758,15 @@
             var name = document.getElementById('qtName').value.trim();
             var email = document.getElementById('qtEmail').value.trim();
             var phone = document.getElementById('qtPhone').value.trim();
+            var city = document.getElementById('qtCity').value.trim();
             var company = document.getElementById('qtCompany').value.trim();
             var packageSelected = document.getElementById('quoteModalTitle').innerHTML.replace(/&nbsp;/g, ' ').trim();
             var websiteType = document.getElementById('qtWebsiteType').value;
             var budget = document.getElementById('qtBudget').value;
             var message = document.getElementById('qtMessage').value.trim();
 
-            if (!name || !email || !phone) {
-                showFormMsg('quoteMsg', 'Please fill in required fields (Name, Email, Phone).', 'error');
+            if (!name || !email || !phone || !city) {
+                showFormMsg('quoteMsg', 'Please fill in required fields (Name, Email, Phone, City).', 'error');
                 return;
             }
 
@@ -5356,23 +5781,21 @@
                 showFormMsg('quoteMsg', 'Email service blocked or not loaded. Check browser shields.', 'error');
                 return;
             }
+            if (activeEmailJS.publicKey) emailjs.init(activeEmailJS.publicKey);
 
             var adminParams = {
-                name: name,
+                from_name: name,
+                from_email: email,
                 email: email,
                 phone: phone,
+                city: city,
                 company: company,
                 package: packageSelected,
                 type: websiteType,
                 budget: budget,
-                message: message ? message : "No message provided"
-            };
-
-            var userParams = {
-                name: name,
-                email: email,
-                package: packageSelected,
-                to_email: email
+                message: message ? message : "No message provided",
+                form_type: 'New Pricing Quote',
+                name: name
             };
 
             // Attempt to send to Admin
@@ -5382,14 +5805,13 @@
                     // After admin success, send auto-reply separately with a small delay
                     setTimeout(function () {
                         var userParams = {
-                            name: name,
-                            from_name: name,
-                            to_name: name,
-                            email: email,
                             to_email: email,
-                            user_email: email,
+                            email: email,
+                            from_name: name,
+                            name: name,
+                            to_name: name,
                             package: packageSelected,
-                            type: 'Quote Request'
+                            form_type: 'New Pricing Quote'
                         };
                         emailjs.send(activeEmailJS.serviceId, activeEmailJS.clientTemplate, userParams)
                             .then(function () { console.log("Auto-reply sent successfully."); })
@@ -5403,6 +5825,8 @@
                     }
                     showFormMsg('quoteMsg', 'Request submitted successfully! We will contact you soon. ✅', 'success');
                     showToast('Success! We will contact you soon. 📧');
+                    // Clear fields
+                    ['qtName', 'qtEmail', 'qtPhone', 'qtCity', 'qtCompany', 'qtWebsiteType', 'qtBudget', 'qtMessage'].forEach(id => { var el = document.getElementById(id); if (el) el.value = ''; });
                     setTimeout(function () { closeModal('quote'); }, 3000);
                 })
                 .catch(function (error) {
@@ -5422,6 +5846,7 @@
                     name: name,
                     email: email,
                     phone: phone,
+                    city: city,
                     company: company,
                     packageType: packageSelected,
                     websiteType: websiteType,
@@ -5432,10 +5857,38 @@
                 fetch(SHEET_URL, {
                     method: 'POST',
                     mode: 'no-cors',
-                                     body: JSON.stringify(sheetData)
-                }).catch(e => {});
+                    body: JSON.stringify(sheetData)
+                }).then(() => {
+                    console.log("Quote saved to sheet.");
+                }).catch(e => { console.log("Sheet save error:", e); });
             }
         }
-        </script>
+        // ============================================
+        // API CACHING (Performance optimization)
+        // ============================================
+        var CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+        function getCachedData(key, url) {
+            try {
+                var cached = localStorage.getItem('ard_cache_' + key);
+                var cacheTime = localStorage.getItem('ard_cache_' + key + '_time');
+                if (cached && cacheTime && (Date.now() - parseInt(cacheTime)) < CACHE_DURATION) {
+                    return Promise.resolve(JSON.parse(cached));
+                }
+            } catch (e) { }
+            return fetch(url)
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    try {
+                        localStorage.setItem('ard_cache_' + key, JSON.stringify(data));
+                        localStorage.setItem('ard_cache_' + key + '_time', Date.now().toString());
+                    } catch (e) { }
+                    return data;
+                });
+        }
+    </script>
+
+    <!-- EmailJS loaded deferred at bottom for non-blocking page load -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 </body>
+
 </html>
