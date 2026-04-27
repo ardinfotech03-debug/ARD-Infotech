@@ -5691,7 +5691,7 @@
 
             var totalProjects = getAllProjects().length;
             var totalFeedback = (seedFeedback || []).length + (appState.userFeedback || []).length;
-            var happyClients = 150 + totalProjects + totalFeedback;
+            var happyClients = totalProjects + totalFeedback;
 
             var duration = 1200, startTime = performance.now();
             function tick(now) {
