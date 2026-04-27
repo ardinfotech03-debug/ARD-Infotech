@@ -3398,6 +3398,16 @@
                         <h3>Dedicated Support</h3>
                         <p>24/7 post-launch support so your product never skips a beat.</p>
                     </div>
+                    <div class="card reveal">
+                        <div class="card-icon icon-blue"><i class="fa fa-rocket"></i></div>
+                        <h3>Launch in Days</h3>
+                        <p>Rapid kickoff process with clear milestones to move your idea from concept to live product quickly.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-icon icon-purple"><i class="fa fa-users"></i></div>
+                        <h3>Business-First UX</h3>
+                        <p>User flows designed for real customer behavior, helping you increase engagement and conversions.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -4028,8 +4038,8 @@
                 <div class="form-group full" style="margin-top:20px">
                     <label class="form-label">Admin Password</label>
                     <input class="form-input" type="password" id="emConfigPass" placeholder="••••••••"
-                        onkeyup="if(this.value === 'ard2025') unlockEmailConfig()" />
-                    <p style="color:var(--muted);font-size:0.7rem;margin-top:8px">Enter 'ard2025' to unlock manager.</p>
+                        onkeyup="unlockEmailConfig()" />
+                    <p style="color:var(--muted);font-size:0.7rem;margin-top:8px">Enter admin password to unlock manager.</p>
                 </div>
             </div>
 
@@ -4428,7 +4438,7 @@
         // CONSTANTS
         // ============================================
         var ADMIN_USER = 'admin';
-        var ADMIN_PASS = 'ard2025';
+        var ADMIN_PASS_HASH = 'fb40561df9171fa31bf2d5744d3f98233e2b2d0dd4ddc2aca52af8968ca8ab1d';
         var LOCK_IMG = 'https://res.cloudinary.com/dilsx2np3/image/upload/v1777214045/ARD_ntgdsl.jpg';
         var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzFWvGIv9zyNEenUuoSak-8d17FzG6Kl4aL48TbTwC_bDtE6HMnISjyS6jYRG0TQ83C/exec';
 
@@ -4753,9 +4763,27 @@
         // ============================================
         // SECRET EMAIL CONFIG MANAGER logic
         // ============================================
-        function unlockEmailConfig() {
+        async function sha256(text) {
+            var data = new TextEncoder().encode(String(text || ''));
+            var hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hashBuffer)).map(function (b) {
+                return b.toString(16).padStart(2, '0');
+            }).join('');
+        }
+
+        async function isValidAdminPass(pass) {
+            if (!pass) return false;
+            try {
+                var passHash = await sha256(pass);
+                return passHash === ADMIN_PASS_HASH;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        async function unlockEmailConfig() {
             var pass = document.getElementById('emConfigPass').value;
-            if (pass === ADMIN_PASS) {
+            if (await isValidAdminPass(pass)) {
                 document.getElementById('emConfigLogin').style.display = 'none';
                 document.getElementById('emConfigLocked').style.display = 'block';
                 showToast('Correct Password. Manager Unlocked! \ud83d\udd13');
@@ -4794,9 +4822,9 @@
                 }).catch(e => { console.log('Email config fetch error:', e); });
         }
 
-        function saveEmailJSConfig() {
+        async function saveEmailJSConfig() {
             var pass = document.getElementById('emConfigPass').value;
-            if (pass !== ADMIN_PASS) {
+            if (!(await isValidAdminPass(pass))) {
                 showFormMsg('emConfigMsg', 'Session expired or invalid password.', 'error');
                 return;
             }
@@ -5080,10 +5108,10 @@
         function closeAdmin() { document.getElementById('adminOverlay').classList.remove('open'); document.body.style.overflow = ''; }
         function showLoginPanel() { document.getElementById('adminLogin').style.display = 'block'; document.getElementById('adminDash').style.display = 'none'; }
         function showDash() { document.getElementById('adminLogin').style.display = 'none'; document.getElementById('adminDash').style.display = 'block'; renderAdminList(); }
-        function adminLogin() {
+        async function adminLogin() {
             var u = document.getElementById('adminUser').value.trim();
             var p = document.getElementById('adminPass').value;
-            if (u === ADMIN_USER && p === ADMIN_PASS) { appState.isAdminLoggedIn = true; showDash(); showToast('Welcome, Admin! 🔓'); }
+            if (u === ADMIN_USER && await isValidAdminPass(p)) { appState.isAdminLoggedIn = true; showDash(); showToast('Welcome, Admin! 🔓'); }
             else showFormMsg('loginMsg', 'Invalid username or password.', 'error');
         }
         function adminLogout() {
